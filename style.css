@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap');
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	align-items: center;
+	display: flex;
+	/*flex-direction: column;*/
+	justify-content: center;
+
+	font-family: 'Roboto', sans-serif;
+	height: 100vh;
+	margin: 0;
+	overflow: hidden;
+}
+
+.container {
+	display: flex;
+	width: 90vw;
+}
+
+.panel {
+	background-size: auto 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: #fff;
+	cursor: pointer;
+	height: 85vh;
+	flex: 0.2;
+	transition: flex 1s ease-in;
+	position: relative;
+}
+
+.panel:first-of-type {
+	border-top-left-radius: 50px;
+}
+
+.panel:last-of-type {
+	border-bottom-right-radius: 50px;
+}
+
+h3 {
+	font-size: 30px; 
+	opacity: 0;
+	position: absolute;
+	left: 20px;
+	bottom: 15px;
+}
+
+/*The css for the active panel*/
+
+.active {
+	background-size: cover;
+	flex: 5;
+}
+
+.active h3 {
+	opacity: 1;
+	transition: opacity 300ms ease-in 400ms;
+}
+
+@media (max-width: 600px) {
+
+	.container {
+		flex-direction: column;
+		min-height: 90%;
+	}
+
+	.panel {
+		background-size: cover;
+	}
+}
